@@ -1,4 +1,4 @@
-Instruções acerca do ambiente virtual <br>
+Instruções acerca do ambiente virtual. Obs: executar no terminal da pasta principal onde se encontra o manage.py <br>
  <br>
 1º: <br>
 python3 -m venv nome_do_ambiente_virtual <br>
