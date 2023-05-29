@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>> Brother-InCode</title>
+	<script>
+		function clearInput(element) {
+			element.placeholder = "";
+		}
+	</script>
+	<link rel="stylesheet" type="text/css" href="estilos.css">
+</head>
+<body>
+	<div class="logo" style="text-align: center; margin-left: 27%;">
+		<a href="main2.html"> Brother-InCode</a>
+	</div>
+	<div id="LoginTela">
+		<div class="logo" style="padding: 15px 50px; margin-bottom: 10%;">
+			> Login	
+		</div>
+		<div>
+			<input type="text" name="nome" placeholder="UserName/Email" onclick="clearInput(this)">			
+		</div>		
+		<div>
+			<input type="password" name="nome" placeholder="Senha" onclick="clearInput(this)">			
+		</div>
+		<div id="entrarLogin">
+			<a href="#">
+				Entrar
+			</a>
+		</div>
+		<div id="preregister">
+			<a href="">Esqueceu a senha?</a>
+		</div>
+		<div id="divisor"></div>
+		<div id="preregister" style="color: black">
+			Não é registrado?
+			<a href="joinUs.html">Cadastre-se</a>
+		</div>
+	</div>
+</body>
+</html>

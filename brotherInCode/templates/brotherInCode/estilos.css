@@ -1,0 +1,684 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap');
+
+* {
+    padding: 0;
+    box-sizing: border-box;
+}
+
+p{
+	margin: 10px;
+}
+
+.logo{
+	max-width: 600px;
+	height: 52px;
+	left: 10px;
+	top: 14px;
+
+	font-family: 'Fira Code', monospace;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 40px;
+	line-height: 52px;
+	color: #00B907;
+	text-shadow: 0px 2px 2px rgb(0, 255, 0);
+}
+
+body{
+	padding: 15px;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	background: url(img/bg.jpeg) repeat;
+}
+
+#container{
+	display: flex;
+	align-items: center;
+	width: 1238px;
+	margin: 0 auto;
+}
+
+#topo-menu{
+	margin-top: 10px;
+	background: #C3C3C3;
+}
+
+#topo-menu ul {
+    max-width: 1238px;
+    list-style: none;
+    padding: 0;
+}
+
+#topo-menu ul li {
+    display: inline-block;
+}
+
+#topo-menu ul li a {
+    color: #7C7C7C;
+	font-size: 0.9em;
+    padding: 0.5em 1.5em;
+    display: inline-block;
+	line-height: 2.1em;
+    transition: background .4s;
+
+	border-right: 1px solid #7C7C7C;
+
+	text-decoration: none;
+	font-family: 'Fira Code', monospace;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 21px;
+}
+
+#topo-menu ul li a .icone{
+    width: 17px;
+ 	height: 17px;
+}
+
+#topo-menu ul li a:hover {
+    color: black;
+    background-color: #D9D9D9
+}
+
+.selected {
+    color: black;
+    background-color: #D9D9D9
+}
+
+/*PARTE LOGIN*/
+#Login a{
+	position: absolute;
+	width: 170px;
+	height: 50px;
+	left: 1120px;
+	top: 20px;
+	background: #006404;
+	border-radius: 50px;
+	text-decoration: none;
+
+	/*texto no login*/
+	text-align: center;
+	line-height: 40px;
+	font-family: 'Fira Code', monospace;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 32px;
+	line-height: 42px;
+	color: #FFFFFF;
+	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#Login a:hover{
+	background: #27c42c;
+	font-weight: bolder;
+}
+
+#LoginTela{
+	border-radius: 30px;
+	width:480px; /*largura*/
+	height: 500px; /* altura do quadrado */
+	background-color: rgb(255, 255, 255); /* cor de fundo do quadrado */
+	position: absolute; /* posição absoluta para centralizar na página */
+	top: 30%; /* define a distância do topo */
+	left: 40%; /* define a distância da esquerda */
+	margin-top: -100px; /* ajusta o posicionamento para o topo */
+	margin-left: -100px; /* ajusta o posicionamento para a esquerda */
+}
+
+#LoginTela input[type="password"], input[type="email"], input[type="text"]{
+	position: relative;
+	width: 384px;
+	height: 30px;
+	margin-top: 5%;
+	left: 10%;
+	text-align: center;
+	font-size: medium;
+
+	background: #D9D9D9;
+	box-shadow: inset 0px 0px 10px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 10px;
+}
+
+#LoginTela input[type="radio"]{
+	position: relative;
+	margin-top: 5%;
+	margin-bottom: 2%;
+
+	background: #D9D9D9;
+	box-shadow: inset 0px 0px 10px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 10px;
+}
+
+
+#entrarLogin{
+	position: relative;
+	width: 380px;
+	height: 50px;
+	margin-top: 5%;
+	left: 10%;
+	background: #006404;
+	border-radius: 50px;
+
+	position: relative;
+	width: 384px;
+	height: 50px;
+	margin-top: 10%;
+	left: 10%;
+	text-align: center;	
+}
+
+#entrarLogin a{	
+	
+	line-height: 40px;
+	font-family: 'Fira Code', monospace;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 32px;
+	line-height: 42px;
+	color: #FFFFFF;
+	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);	
+}
+
+#LoginTela a{
+	text-decoration: none;
+}
+
+#preregister{
+	position: relative;
+	width: 228px;
+	height: 26px;
+	margin-top: 5%;
+	left: 25%;
+	margin-bottom: 0%;
+
+	font-family: 'Fira Code';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 26px;
+	text-align: center;
+
+	color: #006404;
+}
+#preregister a:hover,a:visited {
+    color: #006404;
+}
+
+#divisor{
+	position: relative;
+	width: 345px;
+	height: 0px;
+	margin-top: 5%;
+	margin-bottom: 0%;
+	left: 15%;
+
+	border: 1px solid #006404;
+}
+
+#entrarLogin:hover{
+	background: #27c42c;
+	font-weight: bolder;
+}
+
+/*FIM LOGIN*/
+
+#perfil {
+	display: flex;
+    justify-content: space-around;
+}
+
+#corpo{
+	box-sizing: border-box;
+	position: static;
+	width: 1238px;
+	margin: 0 auto;
+	background: #f5f4f4;
+	border: 31px solid #d4cccc;
+}
+
+#img-container {
+	display: block;
+	text-align: center;
+	position: relative;
+}
+
+#img-container .fundo{
+	margin-top: 55px;
+	max-height: 640px;
+}
+
+#img-container figcaption .titulo {
+	position: absolute;
+	width: 509px;
+	height: 70px;
+	left: 600px;
+	top: 280px;
+
+	font-family: 'Fira Code', monospace;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 53px;
+	line-height: 70px;
+	color: #00B907;
+}
+
+#img-container figcaption .texto {
+	position: absolute;
+	width: 300px;
+	height: 70px;
+	left: 700px;
+	top: 350px;
+	text-align: justify;
+
+	font-family: 'Fira Code', monospace;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 26px;
+	color: black;
+}
+
+#texto-corpo {
+	display: block;
+	text-align: center;
+	position: relative;
+	padding-bottom: 10px;
+	margin-top: 10px;
+}
+
+#texto-corpo h1 {
+	font-family: 'Fira Code', monospace;
+}
+
+#texto-corpo .marked {
+	color: #00B907;
+}
+
+#texto-corpo .descricao {
+	text-align: justify;
+	font-style: normal;
+	font-size: 20px;
+	line-height: 26px;
+	color: black;
+}
+
+#texto-corpo-dif {
+	background-color: #00B907;
+	display: block;
+	text-align: center;
+	position: relative;
+	padding: 50px;
+}
+
+#texto-corpo-dif p{
+	color: white;
+	font-family: 'Fira Code', monospace;
+}
+
+#button{
+	display: block;
+	text-align: center;
+	position: relative;
+	padding: 20px;
+}
+
+#button a{
+	position: relative;
+	background: #006404;
+	padding: 20px;
+	border-radius: 50px;
+	
+	/*texto no login*/
+	text-decoration: none;
+	text-align: center;
+	line-height: 40px;
+	font-family: 'Fira Code', monospace;
+	font-style: normal;
+	font-weight: bold;
+	
+	font-size: 25px;
+	line-height: 42px;
+	color: #FFFFFF;
+	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#button a:hover{
+	background: #27c42c;
+	font-weight: bolder;
+}
+
+#botao{
+	display: block;
+	align-items: center;
+	position: relative;
+	padding: 20px;
+	
+	margin-top: 3%;
+}
+
+#botao a{
+	position: relative;
+	background: #006404;
+	padding: 20px;
+	border-radius: 100%;
+	margin-left: -96%;
+	
+	/*texto no login
+	text-decoration: none;
+	text-align: center;
+	line-height: 40px;
+	font-family: 'Fira Code', monospace;
+	font-style: normal;
+	font-weight: bold;*/
+	
+	font-size: 25px;
+	line-height: 42px;
+	color: #FFFFFF;
+	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#botao a:hover{
+	background: #27c42c;
+	font-weight: bolder;
+}
+
+#foto_perfil{
+	display: block;
+	align-items: center;
+	position: relative;
+	padding: 20px;
+	height: 50px;
+	width: 50px;
+}
+
+#foto_perfil a{
+	position: relative;
+	background: #d4cccc;
+	padding: 20px;
+	border-radius: 100%;
+	margin-right: 90%;
+	margin-top: 40%;
+	height: 50px;
+	width: 50px;
+	/*texto no login
+	text-decoration: none;
+	text-align: center;
+	line-height: 40px;
+	font-family: 'Fira Code', monospace;
+	font-style: normal;
+	font-weight: bold;*/
+	
+	font-size: 25px;
+	line-height: 42px;
+	color: #006404;
+	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#foto_perfil a:hover{
+background:#bfb7b7;
+}
+
+#sobre{
+	position:absolute;
+	background:#63b366ac;
+	color:#006404;
+	margin: -145px 55px 20% 840px;
+	border-radius: 20%;
+	padding: 10px 60px 20px 30px;
+	text-align: left;
+	font-family: 'Fira Code', monospace;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 12px;
+	text-align: left;
+}
+
+#areas{
+	position:absolute;
+	background:#d4cccc;
+	color:#006404;
+	text-align: left;
+	font-family: 'Fira Code', monospace;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 12px;
+	text-align: left;
+	padding: 0px 240px 20px 30px;
+	border-radius: 10%;
+	margin-bottom: 500px;
+	margin-top: -120px;
+}
+
+#tutor{
+	position:absolute;
+	font-family: 'Fira Code', monospace;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 12px;
+	color: #006404;
+	text-align: left;
+}
+
+#capa{
+	font-family: 'Fira Code', monospace;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 16px;
+	color: #FFFFFF;
+}
+#estrela{
+	display: block;
+}
+
+#estrela a{
+	color: #FFFFFF;
+}
+
+#estrela a:hover{
+	color:#006404;
+	
+}
+
+#img-perfil {
+	margin-top: 100px;
+	margin-right: 150px;
+}
+
+#img-perfil button {
+	position: relative;
+	width: 184px;
+	margin-top: 5%;
+	margin-left: 10%;
+	font-family: 'Fira Code', monospace;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 26px;
+	color: white;
+	background: #006404;
+	box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+	border-radius: 0px;
+}
+
+#img-perfil button:hover {
+	color: white;
+	background: #27c42c;
+}
+
+#texto-perfil {
+	display: flex;
+	text-align: left;
+	margin-left: 100px;
+	margin-right: -150px;
+	position: relative;
+	padding: 50px;
+	font-family: 'Fira Code', monospace;
+}
+
+#texto-perfil input {
+	position: relative;
+	width: 284px;
+	height: 40px;
+	margin-bottom: 4%;
+	font-size: large;
+
+	background: #D9D9D9;
+	box-shadow: inset 0px 0px 10px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 10px;
+	text-indent: 10px;
+}
+
+#texto-perfil .disciplinas {
+	width: 454px;
+	height: 144px;
+	text-indent: 10px;
+}
+
+#texto-perfil button {
+	position: relative;
+	float: left;
+	width: 184px;
+	margin-top: 5%;
+	font-family: 'Fira Code', monospace;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 26px;
+	color: black;
+	background: #f3f3f3;
+	box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+	border-radius: 15px;
+}
+
+#texto-perfil .salvar {
+	width: 244px;
+	height: 40px;
+	background: #006404;
+	color: white;
+	margin-top: 3%;
+}
+
+
+#texto-perfil .salvar:hover {
+	background: #27c42c;
+}
+
+#texto-perfil .cancelar {
+	width: 184px;
+	height: 30px;
+	background: #d1d1d1;
+	color: black;
+	margin-left: 5%;
+}
+
+
+#texto-perfil .cancelar:hover {
+	color: white;
+	background: #991818;
+}
+
+#texto-perfil button:hover {
+	background: #cecece;
+}
+
+/*RODAPÉ*/
+#conteiner-rodape{
+	background-color: #00B907;
+	padding: 20px;
+	opacity: 50%;
+}
+
+#rodape{
+	width: 750px;
+	margin: 0 auto;
+	color: #00B907;
+}
+
+/* * ESTILOS LINK CORPO MAINv2*/
+
+#texto-corpo2 ul {
+    max-width: 100%;
+    list-style: none;
+}
+
+#texto-corpo2 ul li a {
+    display: inline-block;
+    transition: #cccccc .4s;
+	padding: 10px 10px;
+
+	text-decoration: none;
+	
+	font-size: 16px;
+	line-height: 30px;
+}
+
+#texto-corpo2 ul li a:hover{
+	background-color: #06f00d;
+}
+
+#sobre2{
+	position:fixed;
+	background:#63b366ac;
+	color:#006404;
+	margin: -1150px 110px -20px 980px; /** x=alt in position y= largura comprimento larg z = idontknow a= left position*/	
+	border-radius: 20%;
+	padding: 10px 5px 10px 10px;
+
+	/*Font style*/
+	text-align: center;
+	font-family: 'Fira Code', monospace;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 12px;
+	text-align: left;
+}
+
+/*tutoria*/
+.card {
+	background-color: #63b366ac;
+	color:#006404;
+	margin-top:20px;
+	padding: 20px;
+	border-radius: 7px;
+	display:inline-flex;
+}
+
+#foto_card{
+	display: inline-table;
+	align-items: center;
+	position: relative;
+}
+
+#foto_card a{
+	position: relative;
+	background: #d4cccc;
+	padding: 20px;
+	border-radius: 100%;
+	font-size: 25px;
+	line-height: 42px;
+	color: #006404;
+	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#foto_card a:hover{
+	background:#bfb7b7;
+}
+
+.tutorias{
+	float: left;
+  	width: 25%;
+	padding: 0 20px 0;
+}
+
+.tutorias ul{
+	text-align: left;
+}
+
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+/*fim da tutoria*/
