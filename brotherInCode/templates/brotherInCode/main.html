@@ -5,6 +5,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>> Brother-InCode</title>
 	<link rel="stylesheet" type="text/css" href="estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
+
 </head>
 <body>
 	<div id="container">
@@ -95,12 +97,50 @@
 				<a href="#">
                     <span class="botao_icon" style="left: 10%;">
                         <ion-icon name="chatbubbles-outline"></ion-icon>
-                    </span> 
+                    </span>
                 </a>
 			</div>
-        
+            <div id="calendar"></div>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+            <script>
+                $(document).ready(function() {
+                    $('#calendar').fullCalendar({
+                        // Configurações do calendário
+                        header: {
+                            left: 'prev,next today',
+                            center: 'title',
+                            right: 'month,agendaWeek,agendaDay'
+                        },
+                        selectable: true, // Permite selecionar um período de tempo no calendário
+                        select: function(start, end) {
+                            // Função chamada quando um período é selecionado
+                            // Você pode implementar o código para tratar o agendamento aqui
+                            var title = prompt('Digite o título do agendamento:');
+                            if (title) {
+                                var eventData = {
+                                    title: title,
+                                    start: start,
+                                    end: end
+                                };
+                                $('#calendar').fullCalendar('renderEvent', eventData, true); // Renderiza o evento no calendário
+                                // Aqui você pode adicionar o código para enviar os dados do agendamento para o servidor
+                            }
+                            $('#calendar').fullCalendar('unselect'); // Desseleciona o período no calendário
+                        },
+                        editable: true, // Permite arrastar e redimensionar eventos
+                        events: [
+                            // Eventos existentes podem ser carregados aqui
+                            // Formato de evento: { title: 'Evento', start: '2023-05-30T10:00:00', end: '2023-05-30T12:00:00' }
+                        ]
+                    });
+                });
+            </script>
 		</div>
-        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
