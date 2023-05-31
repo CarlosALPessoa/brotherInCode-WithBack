@@ -11,7 +11,6 @@ No Linux: <br>
   
 3º: <br>
 pip install -r requements.txt <br>
-pip install django-filter
 
 4º: <br>
 py manage.py migrate <br>
