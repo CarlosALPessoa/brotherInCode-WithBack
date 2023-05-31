@@ -19,8 +19,13 @@ from django.urls import path, include
 
 from brotherInCode.views import *
 
-base = 'api/'
+urlpatterns = [
 
+    path('admin/', admin.site.urls),
+    path('', include('brotherInCode.urls')),
+
+]
+"""
 urlpatterns = [
     path(base+'admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
@@ -29,3 +34,4 @@ urlpatterns = [
     path('perfil/', perfil_usuario, name='perfil_usuario'),
     path('tutorias/', tutorias, name='tutorias'),
 ]
+"""
