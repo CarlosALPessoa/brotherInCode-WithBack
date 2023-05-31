@@ -31,16 +31,40 @@ class EspecializacaoTutorSerializer(serializers.ModelSerializer):
     class Meta:
         model = EspecializacaoTutor
         fields = '__all__'
+    
+    def to_representation(self, obj):
+        return {
+            'id_especializacao': obj.id_especializacao,
+            'id_tutor': obj.id_tutor.pk,
+            'area_do_conhecimento': obj.id_sub_area_conhecimento.nome,
+        }
+    
 
 class InteresseAlunoSerializer(serializers.ModelSerializer):
     class Meta:
         model = InteresseAluno
         fields = '__all__'
+    
+    def to_representation(self, obj):
+        return {
+            'id_interesse': obj.id_interesse,
+            'id_aluno': obj.id_aluno.pk,
+            'area_do_conhecimento': obj.id_sub_area_conhecimento.nome,
+        }
 
 class HorariosTutorSerializer(serializers.ModelSerializer):
     class Meta:
         model = HorariosTutor
         fields = '__all__'
+    
+    def to_representation(self, obj):
+        return {
+            'id_horario': obj.id_horario_tutor,
+            'id_tutor': obj.id_tutor.pk,
+            'dia': obj.dia_semana,
+            'hora_inicio': obj.hora_inicio,
+            'hora_fim': obj.hora_fim,
+        }
 
 class AvaliacaoTutorSerializer(serializers.ModelSerializer):
     class Meta:

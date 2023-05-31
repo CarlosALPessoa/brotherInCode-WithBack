@@ -17,12 +17,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from brotherInCode.urls import *
+from brotherInCode.views import *
 
 base = 'api/'
 
 urlpatterns = [
     path(base+'admin/', admin.site.urls),
-    path(base+'', include(routerBrotherInCode.urls)),
     path('api-auth/', include('rest_framework.urls')),
+    path('tutores/', lista_tutores, name='lista_tutores'),
+    path('tutores/<int:id_tutor>/', perfil_tutor, name='detalhe_tutor'),
+    path('perfil/', perfil_usuario, name='perfil_usuario'),
+    path('tutorias/', tutorias, name='tutorias'),
 ]
