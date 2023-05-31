@@ -27,7 +27,7 @@ urlpatterns = [
 ]
 """
 urlpatterns = [
-    path(base+'admin/', admin.site.urls),
+    path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
     path('tutores/', lista_tutores, name='lista_tutores'),
     path('tutores/<int:id_tutor>/', perfil_tutor, name='detalhe_tutor'),
