@@ -1,11 +1,15 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>> Brother-InCode</title>
-    <link rel="stylesheet" type="text/css" href="estilos.css">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>> Brother-InCode</title>
+    
+	<link type="text/css" href="{% static "../static/css/estilos.css" %}" rel="stylesheet">
 </head>
 
 <body>
@@ -34,7 +38,18 @@
     <div id="corpo">
         <div id="img-container">
         </div>
+        {%block main2-body%}
+    <div id="texto-corpo2" >
+        <!--Apresentação bem-vindo-->
+        <div id="sobre2" style="position:fixed;  float: right; margin-top: 2%;">
 
+            
+            <h2>SEJA BEM-VINDO</h2>
+            <p style="text-align: justify;color: #000;">Brother-InCode</p>
+            <p style="color: #000;">Um espaço para todo e qualquer programador.</p>
+       
+            		
+		</div>
         <div id="texto-corpo2">
             <!--Corpo link para clique tutoria-->
             {% for tutor in tutores %}
@@ -67,28 +82,15 @@
                 </li>
             </ul>
             {% endfor %}
-            <!--Corpo link para clique tutoria-->
 
-
-            <!--FIM CORPO LINK-->
-
-            <!--Apresentação bem-vindo-->
-            <!--        <div id="sobre2" style="position:fixed;  float: right;">
-
-            
-            <h2>SEJA BEM-VINDO</h2>
-            <p style="text-align: justify;color: #000;">Brother-InCode</p>
-            <p style="color: #000;">Um espaço para todo e qualquer programador.</p>
-       
-            		
-		    </div>
--->
         </div>
+    
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     </div>
 
     <!--Rodapé-->
+
     <div id="container-rodape" style="clear: both;">
         <div id="rodape" style="text-align: center;">
             &copy; Copyright 2023-2023 Brother-InCode

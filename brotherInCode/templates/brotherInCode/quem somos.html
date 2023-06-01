@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 
@@ -5,7 +6,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>> Brother-InCode</title>
-	<link rel="stylesheet" type="text/css" href="estilos.css">
+	<link rel="stylesheet" type="text/css" href="{% static "../static/css/estilos.css" %}">
 </head>
 
 <body>
@@ -26,15 +27,13 @@
 					<li><a href="{% url 'tutorias' %}"><img src="img/image 3.png" class="icone"> Tutorias</a></li>
 
 					<li><a href="{% url 'perfil_usuario' %}"><img src="img/image 5.png" class="icone"> Perfil</a></li>
-					<!--<li><a href="#"><img src="img/image 6.png" class="icone"> Mensagens</a></li> 
-					FUTURA IMPLEMENTAÇÃO
-					-->
+
 			</div>
 		</div>
 	</div>
 	<div id="corpo">
 		<div id="img-container">
-			<img src="img/inicio.png" class="fundo">
+			<img src={% static "../static/img/inicio.png" %} class="fundo">
 			<figcaption><span class="titulo">> Brother-InCode</span>
 				<span class="texto">/* desenvolva suas habilidades de programação e outras áreas com o Brother-InCode -
 					seu parceiro em tecnologia! */</span>
@@ -73,6 +72,7 @@
 			</span>
 			<div id="button">
 				<a href="{% url 'lista_tutores' %}">Veja nossos tutores!</a>
+
 			</div>
 		</div>
 		<div id="texto-corpo-dif">
