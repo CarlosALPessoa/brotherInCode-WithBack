@@ -137,7 +137,7 @@ class HorariosTutor(models.Model):
         db_table = 'HorariosTutor'
     
     def __str__(self):
-        return self.id_tutor.nome + ' - ' + self.dia_semana + ' - ' + self.hora_inicio + ' - ' + self.hora_fim
+        return self.id_tutor.nome + ' - ' + self.dia_semana + ' - ' + str(self.hora_inicio) + ' - ' + str(self.hora_fim)
 
 
 class AvaliacaoTutor(models.Model):
@@ -145,14 +145,14 @@ class AvaliacaoTutor(models.Model):
     id_tutor = models.ForeignKey(Tutores, on_delete=models.CASCADE)
     id_aluno = models.ForeignKey(Alunos, on_delete=models.CASCADE)
     nota = models.PositiveIntegerField()
-    comentario = models.TextField()
+    comentario = models.TextField(blank=True, null=True)
     
     class Meta:
         verbose_name_plural = 'Avaliações dos Tutores'
         db_table = 'AvaliacaoTutor'
     
     def __str__(self):
-        return self.id_tutor.nome + ' - ' + self.nota
+        return self.id_tutor.nome + ' - ' + str(self.nota)
 
 
 class Tutoria(models.Model):

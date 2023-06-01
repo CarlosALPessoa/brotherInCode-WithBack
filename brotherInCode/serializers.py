@@ -31,6 +31,14 @@ class EspecializacaoTutorSerializer(serializers.ModelSerializer):
     class Meta:
         model = EspecializacaoTutor
         fields = '__all__'
+    
+    def to_representation(self, obj):
+        return {
+            'id_especializacao': obj.id_especializacao_tutor,
+            'id_tutor': obj.id_tutor.pk,
+            'area_do_conhecimento': obj.id_sub_area_conhecimento.nome,
+            'descricao': obj.descricao,
+        }
 
 class InteresseAlunoSerializer(serializers.ModelSerializer):
     class Meta:

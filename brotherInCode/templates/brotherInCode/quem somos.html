@@ -1,12 +1,14 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>> Brother-InCode</title>
 	<link rel="stylesheet" type="text/css" href="{% static "../static/css/estilos.css" %}">
 </head>
+
 <body>
 	<div id="container">
 		<div>
@@ -14,29 +16,35 @@
 				> Brother-InCode
 			</div>
 			<div id="Login">
-				<a href="login.html">Login</a>
+				<a href="{% url 'login' %}">Login</a>
 			</div>
 			<div id="topo-menu">
 				<ul style="list-style: none; margin: 0; padding: 0;">
-					<li><a href="{% url 'main2' %}"><img src="{% static "../static/img/image 4.png" %}" class="icone"> Orientações</a></li>
-					<li><a href="{% url 'quem somos' %}" class="selected"><img src="{% static "../static/img/image 2.png" %}" class="icone"> Quem somos</a></li>
-					<li><a href="{% url 'tutorias' %}" ><img src="{% static "../static/img/image 3.png" %}" class="icone"> Tutorias</a></li>				
-					<li><a href="{% url 'perfil' %}" ><img src="{% static "../static/img/image 5.png" %}" class="icone"> Perfil</a></li>  
-                    <!--<li><a href="#"><img src="img/image 6.png" class="icone"> Mensagens</a></li>-->
+					<li><a href="{% url 'lista_tutores' %}"><img src="img/image 4.png" class="icone"> Orientações</a>
+					</li>
+					<li><a href="" class="selected"><img src="img/image 2.png" class="icone"> Quem somos</a>
+					</li>
+					<li><a href="{% url 'tutorias' %}"><img src="img/image 3.png" class="icone"> Tutorias</a></li>
+
+					<li><a href="{% url 'perfil_usuario' %}"><img src="img/image 5.png" class="icone"> Perfil</a></li>
+
 			</div>
-		</div>		
+		</div>
 	</div>
 	<div id="corpo">
 		<div id="img-container">
 			<img src={% static "../static/img/inicio.png" %} class="fundo">
 			<figcaption><span class="titulo">> Brother-InCode</span>
-			<span class="texto">/* desenvolva suas habilidades de programação e outras áreas com o Brother-InCode - seu parceiro em tecnologia! */</span></figcaption>
+				<span class="texto">/* desenvolva suas habilidades de programação e outras áreas com o Brother-InCode -
+					seu parceiro em tecnologia! */</span>
+			</figcaption>
 		</div>
 
 		<!--Quem somos-->
 		<div id="texto-corpo">
 			<h1><span class="marked">Quem somos?</span></h1>
-			<span class="descricao"><p style="margin: 10px;">Um grupo destinado ao sucesso em sua carreira!</p>				
+			<span class="descricao">
+				<p style="margin: 10px;">Um grupo destinado ao sucesso em sua carreira!</p>
 		</div>
 
 
@@ -44,35 +52,59 @@
 		<div id="texto-corpo">
 			<h1>Uma solução para <span class="marked">alunos</span> e <span class="marked">tutores</span></h1>
 			<br>
-			<span class="descricao"><p style="margin: 10px;">O <span class="marked">Brother-InCode</span> é um site dedicado a ajudar jovens a encontrar tutores na área da computação. Este site oferece uma plataforma para que estudantes possam se conectar com tutores experientes que podem ajudá-los a aprender habilidades importantes em programação e tecnologia.</p>
-			
-			<p style="margin: 10px;">Através do <span class="marked">Brother-InCode</span>, os jovens podem se cadastrar gratuitamente e procurar por tutores em diferentes áreas da computação, como programação de jogos, desenvolvimento web, inteligência artificial e muito mais. Os tutores são cuidadosamente selecionados e passam por um processo de verificação antes de serem adicionados ao site, garantindo assim que os estudantes recebam a melhor assistência possível.</p>
+			<span class="descricao">
+				<p style="margin: 10px;">O <span class="marked">Brother-InCode</span> é um site dedicado a ajudar jovens
+					a encontrar tutores na área da computação. Este site oferece uma plataforma para que estudantes
+					possam se conectar com tutores experientes que podem ajudá-los a aprender habilidades importantes em
+					programação e tecnologia.</p>
 
-			<p style="margin: 10px;">O <span class="marked">Brother-InCode</span> é uma ferramenta valiosa para estudantes que desejam aprender mais sobre tecnologia e programação, bem como para aqueles que desejam seguir uma carreira nessa área. Com o acesso a tutores experientes e recursos educacionais de qualidade, os estudantes têm a oportunidade de se tornarem especialistas em tecnologia e, eventualmente, contribuir para a inovação e o avanço tecnológico em todo o mundo.</p>
+				<p style="margin: 10px;">Através do <span class="marked">Brother-InCode</span>, os jovens podem se
+					cadastrar gratuitamente e procurar por tutores em diferentes áreas da computação, como programação
+					de jogos, desenvolvimento web, inteligência artificial e muito mais. Os tutores são cuidadosamente
+					selecionados e passam por um processo de verificação antes de serem adicionados ao site, garantindo
+					assim que os estudantes recebam a melhor assistência possível.</p>
+
+				<p style="margin: 10px;">O <span class="marked">Brother-InCode</span> é uma ferramenta valiosa para
+					estudantes que desejam aprender mais sobre tecnologia e programação, bem como para aqueles que
+					desejam seguir uma carreira nessa área. Com o acesso a tutores experientes e recursos educacionais
+					de qualidade, os estudantes têm a oportunidade de se tornarem especialistas em tecnologia e,
+					eventualmente, contribuir para a inovação e o avanço tecnológico em todo o mundo.</p>
 			</span>
 			<div id="button">
-				<a href="{% url 'main2' %}">Explore!</a>
+				<a href="{% url 'lista_tutores' %}">Veja nossos tutores!</a>
+
 			</div>
 		</div>
 		<div id="texto-corpo-dif">
-			<p>Com apenas um clique, nosso site te indicará o tutor ideal para esclarecer suas dúvidas e garantir que você aprenda.</p>
+			<p>Com apenas um clique, nosso site te indicará o tutor ideal para esclarecer suas dúvidas e garantir que
+				você aprenda.</p>
 		</div>
 		<div id="texto-corpo">
 			<h1>Seja um <span class="marked">tutor</span></h1>
-			<span class="descricao"><p>Nossa plataforma oferece uma maneira fácil e conveniente para que você compartilhe seu conhecimento e ajude estudantes a alcançarem seus objetivos educacionais. Com nosso sistema avançado de seleção de tutores, os estudantes podem encontrar o tutor ideal para suas necessidades, e você pode ser essa pessoa que fará a diferença na vida deles.</p>
+			<span class="descricao">
+				<p>Nossa plataforma oferece uma maneira fácil e conveniente para que você compartilhe seu conhecimento e
+					ajude estudantes a alcançarem seus objetivos educacionais. Com nosso sistema avançado de seleção de
+					tutores, os estudantes podem encontrar o tutor ideal para suas necessidades, e você pode ser essa
+					pessoa que fará a diferença na vida deles.</p>
 
-				<p>Oferecemos uma ampla gama de recursos e ferramentas para ajudá-lo(a) a ter sucesso como tutor(a), incluindo uma plataforma de ensino fácil de usar, opções de pagamento convenientes e suporte ao cliente de alta qualidade.</p>
-				
-				<p>Ao ingressar em nossa plataforma, você terá a oportunidade de expandir sua rede de contatos e aumentar sua exposição como tutor(a). Além disso, você terá a satisfação de saber que está fazendo a diferença na vida dos estudantes que procuram sua ajuda.</p>
-				
-				<p>Estamos ansiosos para tê-lo(a) em nossa plataforma e esperamos que você considere essa oportunidade de compartilhar seu conhecimento com aqueles que mais precisam.</p>
-				
+				<p>Oferecemos uma ampla gama de recursos e ferramentas para ajudá-lo(a) a ter sucesso como tutor(a),
+					incluindo uma plataforma de ensino fácil de usar, opções de pagamento convenientes e suporte ao
+					cliente de alta qualidade.</p>
+
+				<p>Ao ingressar em nossa plataforma, você terá a oportunidade de expandir sua rede de contatos e
+					aumentar sua exposição como tutor(a). Além disso, você terá a satisfação de saber que está fazendo a
+					diferença na vida dos estudantes que procuram sua ajuda.</p>
+
+				<p>Estamos ansiosos para tê-lo(a) em nossa plataforma e esperamos que você considere essa oportunidade
+					de compartilhar seu conhecimento com aqueles que mais precisam.</p>
+
 				<div id="button">
 					<a href="{% url 'login' %}">Junte-se a nós</a>
 				</div>
-			
+
 			</span>
 		</div>
 	</div>
 </body>
+
 </html>

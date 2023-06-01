@@ -1,149 +1,131 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>> Brother-InCode</title>
-	<link type="text/css" href="{% static "../static/css/estilos.css" %}" rel="stylesheet">
-    <link rel="stylesheet"  href={% url "https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" %}/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>> Brother-InCode</title>
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
+
 </head>
-    <body>
-        <div id="container">
-            <div>
-                <div class="logo">
-                    > Brother-InCode
-                </div>
-                <div id="Login">
-                    <a href="{% url 'login' %}">Login</a>
-                </div>
-                <div id="topo-menu">
-                    <ul style="list-style: none; margin: 0; padding: 0;">
-                        <li><a href="{% url 'main2' %}"class="selected"><img src="{% static "../static/img/image 4.png" %}" class="icone"> Orientações</a></li>
-                        <li><a href="{% url 'quem somos' %}"><img src="{% static "../static/img/image 2.png" %}" class="icone"> Quem somos</a></li>
-                        <li><a href="{% url 'tutorias' %}"><img src="{% static "../static/img/image 3.png" %}" class="icone"> Tutorias</a></li>				
-                        <li><a href="{% url 'perfil' %}" ><img src="{% static "../static/img/image 5.png" %}" class="icone"> Perfil</a></li> 
-                    </ul>
-                </div>
-            </div>		
-        </div>
-        <div id="corpo">
-            <div id="img-container">
+
+<body>
+    <div id="container">
+        <div>
+            <div class="logo">
+                > Brother-InCode
             </div>
-            <div id="texto-corpo">
-                <br><br><br><br>
-                <div id="foto_perfil" style="margin-left: 10%;">
-                    <a href="#">
-                        <span class="botao_icon">
-                            <ion-icon name="person"></ion-icon>
-                        </span> 
-                    </a>
-                    <div id="tutor" style="margin-left: 20%;">
-                        <h1>{%for tutors in tutors%}
-                                {%if tutors.id_tutor == 1%}
-                                    {{tutors.nome}}
-                                {%endif%}
-                            {%endfor%}
-                        </h1>
-                    </div>
+            <div id="Login">
+                <a href="{% url 'login' %}">Login</a>
+            </div>
+            <div id="topo-menu">
+                <ul style="list-style: none; margin: 0; padding: 0;">
+                    <li><a href="{% url 'lista_tutores' %}" class="selected"><img src="img/image 4.png" class="icone">
+                            Orientações</a></li>
+                    <li><a href="{% url 'quem-somos' %}"><img src="img/image 2.png" class="icone"> Quem somos</a></li>
+                    <li><a href="{% url 'tutorias' %}"><img src="img/image 3.png" class="icone"> Tutorias</a></li>
+                    <li><a href="{% url 'perfil_usuario' %}"><img src="img/image 5.png" class="icone"> Perfil</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="corpo">
+        <div id="img-container">
+        </div>
+        <div id="texto-corpo">
+            </span>
+            <br><br><br><br>
+            <div id="foto_perfil">
+                <a href="#">
+                    <span class="botao_icon">
+                        <ion-icon name="person"></ion-icon>
+
+                    </span>
+                </a>
+            </div>
+            <br>
+            <div id="tutor">
+                <h1>{{ tutor.nome }}</h1>
+            </div>
+            <div id="sobre">
+                <h2>Sobre:</h2>
+                <p style="text-align: justify;">{{ tutor.sobre }}</p>
+                <div id="estrela">
+                    {% for estrela in tutor.estrelas %}
+                    <span class="botao_icon">
+                        <ion-icon name="star"></ion-icon>
+                    </span>
+                    {% endfor %}
                 </div>
-
-                <br>
-                
-                <div id="sobre">
-                    <h2>Sobre:</h2>
-                    <p style="text-align: justify;">Um graduando no instituto que visa alcançar sucessos no campo de IA.<br> Ingressado
-                        numa das melhores empresas voltadas em IA, disposto a passar meus conhecimentos para outros
-                        que tem interesse em iniciar na área.</p>
-                    <div id="estrela">
-                        <a href="#">
-                            <span class="botao_icon">
-                                <ion-icon name="star"></ion-icon>
-                            </span>
-                        </a>
-                        <a href="#">
-                            <span class="botao_icon">
-                                <ion-icon name="star"></ion-icon>
-                            </span>
-                        </a>
-                        <a href="#">
-                            <span class="botao_icon">
-                                <ion-icon name="star"></ion-icon>
-                            </span>
-                        </a>
-                        <a href="#">
-                            <span class="botao_icon">
-                                <ion-icon name="star"></ion-icon>
-                            </span>
-                        </a>
-                        <a href="#">
-                            <span class="botao_icon">
-                                <ion-icon name="star"></ion-icon>
-                            </span>
-                        </a>
-                    </div>
-
-                    <h2>Capacitações:</h2>
-                    
-                    <div id="capa">        
-                        <ul>
-                            <li>IA voltada a apredizagem de máquina;</li>
-                            <li>Sistema ChatGPT.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <br><br><br><br><br><br><br><br><br><br><br><br><br>
-
-                <div id="areas" style="margin-left: 10px;">
-                    <h1>Áreas:</h1>
+                <h2>Capacitações:</h2>
+                <div id="capa">
                     <ul>
-                        <li>Lorem ipsum dolor;</li>
-                        <li>Lorem beatae quam quo dolore.</li>
+                        {% for especializacao in tutor.especializacoes %}
+                        <li>{{ especializacao.descricao }}</li>
+                        {% endfor %}
                     </ul>
                 </div>
-                <div id="calendar"></div>
-
-                    <script  src={% url "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" %}></script>
-                    <script  src={% url "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js" %}></script>
-                    <script  src={% url "https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js" %}></script>
-                    <script>
-                        $(document).ready(function() {
-                            $('#calendar').fullCalendar({
-                                // Configurações do calendário
-                                header: {
-                                    left: 'prev,next today',
-                                    center: 'title',
-                                    right: 'month,agendaWeek,agendaDay'
-                                },
-                                selectable: true, // Permite selecionar um período de tempo no calendário
-                                select: function(start, end) {
-                                    // Função chamada quando um período é selecionado
-                                    // Você pode implementar o código para tratar o agendamento aqui
-                                    var title = prompt('Digite o título do agendamento:');
-                                    if (title) {
-                                        var eventData = {
-                                            title: title,
-                                            start: start,
-                                            end: end
-                                        };
-                                        $('#calendar').fullCalendar('renderEvent', eventData, true); // Renderiza o evento no calendário
-                                        // Aqui você pode adicionar o código para enviar os dados do agendamento para o servidor
-                                    }
-                                    $('#calendar').fullCalendar('unselect'); // Desseleciona o período no calendário
-                                },
-                                editable: true, // Permite arrastar e redimensionar eventos
-                                events: [
-                                    // Eventos existentes podem ser carregados aqui
-                                    // Formato de evento: { title: 'Evento', start: '2023-05-30T10:00:00', end: '2023-05-30T12:00:00' }
-                                ]
-                            });
-                        });
-                    </script>
-                </div>
             </div>
-            <script type="module" src={% url "https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" %}></script>
-            <script nomodule  src={% url "https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js" %}></script>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <div id="areas" style="margin-left: 10px;">
+                <h1>Áreas:</h1>
+                <ul>
+                    {% for especializacao in tutor.especializacoes %}
+                    <li>{{ especializacao.area_do_conhecimento }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div id="botao">
+                <a href="#">
+                    <span class="botao_icon" style="left: 10%;">
+                        <ion-icon name="chatbubbles-outline"></ion-icon>
+                    </span>
+                </a>
+            </div>
+            <div id="calendar"></div>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+            <script>
+                $(document).ready(function () {
+                    $('#calendar').fullCalendar({
+                        // Configurações do calendário
+                        header: {
+                            left: 'prev,next today',
+                            center: 'title',
+                            right: 'month,agendaWeek,agendaDay'
+                        },
+                        selectable: true, // Permite selecionar um período de tempo no calendário
+                        select: function (start, end) {
+                            // Função chamada quando um período é selecionado
+                            // Você pode implementar o código para tratar o agendamento aqui
+                            var title = prompt('Digite o título do agendamento:');
+                            if (title) {
+                                var eventData = {
+                                    title: title,
+                                    start: start,
+                                    end: end
+                                };
+                                $('#calendar').fullCalendar('renderEvent', eventData, true); // Renderiza o evento no calendário
+                                // Aqui você pode adicionar o código para enviar os dados do agendamento para o servidor
+                            }
+                            $('#calendar').fullCalendar('unselect'); // Desseleciona o período no calendário
+                        },
+                        editable: true, // Permite arrastar e redimensionar eventos
+                        events: [
+                            // Eventos existentes podem ser carregados aqui
+                            // Formato de evento: { title: 'Evento', start: '2023-05-30T10:00:00', end: '2023-05-30T12:00:00' }
+                        ]
+                    });
+                });
+            </script>
         </div>
-    </body>
+
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
 </html>
