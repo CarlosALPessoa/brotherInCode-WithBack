@@ -31,7 +31,4 @@ urlpatterns = [
     path('perfil/', views.perfil_usuario, name='perfil_usuario'),
     path('login/', views.login, name='login'),
     path('cadastro/', views.cadastro, name='cadastro'),
-
-    #path('api-auth/', include('rest_framework.urls')),
-    #path('tutores/<int:id_tutor>/', perfil_tutor, name='detalhe_tutor'),
 ]

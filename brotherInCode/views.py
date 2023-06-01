@@ -71,7 +71,7 @@ def tutorias(request):
     for tutoria in tutorias:
         res.append({
             'id_tutoria': tutoria.id_tutoria,
-            'tutor': tutoria.id_tutor.nome,
+            'tutor': tutoria.id_tutor,
             'data': tutoria.data,
             'horario': HorariosTutorSerializer(tutoria.id_horario_tutor).data,
             'area_do_conhecimento': tutoria.id_sub_area_conhecimento.nome,
