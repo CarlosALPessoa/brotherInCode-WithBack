@@ -16,9 +16,8 @@ def lista_tutores(request):
             'id_tutor': tutor.id_tutor,
             'nome': tutor.nome,
             'especializacoes': EspecializacaoTutorSerializer(especializacoes, many=True).data,
-            'estrelas': sum([avaliacao.nota for avaliacao in avaliacoes])/len(avaliacoes) if len(avaliacoes) > 0 else 0,
+            'estrelas': [0]*int(sum([avaliacao.nota for avaliacao in avaliacoes])/len(avaliacoes)) if len(avaliacoes) > 0 else [0],
         })
-    
     return render(request, 'brotherInCode/main2.html', {'tutores': res})
 
 

@@ -55,21 +55,11 @@
 
                         <!--Mostragem de avaliação com base nos usuários-->
                         <div style="float: left; margin-left: -20%; padding: -25px; margin-top: 60px;">
-                            <span class="botao_icon">
-                                <ion-icon name="star"></ion-icon>
-                            </span>
-                            <span class="botao_icon">
-                                <ion-icon name="star"></ion-icon>
-                            </span>
-                            <span class="botao_icon">
-                                <ion-icon name="star"></ion-icon>
-                            </span>
-                            <span class="botao_icon">
-                                <ion-icon name="star"></ion-icon>
-                            </span>
-                            <span class="botao_icon">
-                                <ion-icon name="star"></ion-icon>
-                            </span>
+                            {% for estrela in tutor.estrelas %}
+                                <span class="botao_icon">
+                                    <ion-icon name="star"></ion-icon>
+                                </span>
+                            {% endfor %}
                         </div>
                     </a>
                 </li>
