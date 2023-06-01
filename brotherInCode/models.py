@@ -138,7 +138,7 @@ class HorariosTutor(models.Model):
         db_table = 'HorariosTutor'
     
     def __str__(self):
-        return self.id_tutor.nome + ' - ' + self.dia_semana + ' - ' + self.hora_inicio + ' - ' + self.hora_fim
+        return self.id_tutor.nome + ' - ' + self.dia_semana + ' - ' + str(self.hora_inicio) + ' - ' + str(self.hora_fim)
 
 
 class AvaliacaoTutor(models.Model):

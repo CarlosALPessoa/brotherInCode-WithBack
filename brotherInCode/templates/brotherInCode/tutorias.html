@@ -36,6 +36,7 @@
       <h1><span class="marked">Minhas Tutorias</span></h1>
       <div class="card">
         <div class="row">
+          {% for tutoria in tutorias %}
           <div class="card">
             <span class="tutorias">
               <div id="foto_card">
@@ -43,70 +44,35 @@
                   <ion-icon name="person"></ion-icon>
                 </a>
               </div>
-              <h1>Joaquim Maria</h1>
+              <h1> {{ tutoria.tutor }}</h1>
             </span>
 
             <span class="tutorias">
               <h2>Horários</h2>
               <ul>
-                <li>Lorem ipsum dolor;</li>
-                <li>Lorem beatae quam quo dolore.</li>
+                <li><strong>Dia:</strong> {{ tutoria.horario.dia }} ({{ tutoria.data }})</li>
+                <li><strong>Horário de início:</strong> {{ tutoria.horario.hora_inicio }}</li>
+                <li><strong>Horário de término:</strong> {{ tutoria.horario.hora_fim }}</li>
               </ul>
             </span>
 
             <span class="tutorias">
               <h2>Tópicos ensinados</h2>
               <ul>
-                <li>Lorem ipsum dolor;</li>
-                <li>Lorem beatae quam quo dolore.</li>
+                <li>{{ tutoria.area_do_conhecimento }}</li>
               </ul>
             </span>
 
             <span class="tutorias">
               <h2>Link de Reunião</h2>
               <div id="foto_card">
-                <a href="#">
+                <a href="{{ tutoria.link }}">
                   <ion-icon name="chatbubbles-outline"></ion-icon>
                 </a>
               </div>
             </span>
           </div>
-
-          <div class="card">
-            <span class="tutorias">
-              <div id="foto_card">
-                <a href="#">
-                  <ion-icon name="person"></ion-icon>
-                </a>
-              </div>
-              <h1>Ranilson Paiva</h1>
-            </span>
-
-            <span class="tutorias">
-              <h2>Horários</h2>
-              <ul>
-                <li>Lorem ipsum dolor;</li>
-                <li>Lorem beatae quam quo dolore.</li>
-              </ul>
-            </span>
-
-            <span class="tutorias">
-              <h2>Tópicos ensinados</h2>
-              <ul>
-                <li>Lorem ipsum dolor;</li>
-                <li>Lorem beatae quam quo dolore.</li>
-              </ul>
-            </span>
-
-            <span class="tutorias">
-              <h2>Link de Reunião</h2>
-              <div id="foto_card">
-                <a href="#">
-                  <ion-icon name="chatbubbles-outline"></ion-icon>
-                </a>
-              </div>
-            </span>
-          </div>
+          {% endfor %}
 
         </div>
       </div>
