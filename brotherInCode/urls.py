@@ -17,18 +17,18 @@ routerBrotherInCode.register(r'tutoria', TutoriaViewSet)
 #By Carlos
 from django.contrib import admin
 from django.urls import path
-from brotherInCode.views import *
+from .views import *
 
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('Home/', home, name='main2'),
-    path('PerfilTutor/', perfilTutor, name= 'main'),
+#    path('Home/', home, name='main2'),
+    path('PerfilTutor/', perfil_tutor, name= 'main'),
     path('QuemSomos/', quemSomos, name='quem somos'),
     path('Tutorias/', tutorias, name = 'tutorias'),
-    path('Perfil/', perfil, name="perfil"),
+    path('Perfil/', perfil_usuario, name="perfil"),
     path('Login/', login, name= 'login'),
-    path('JoinUs/', joinUs, name='joinUs')
+    path('JoinUs/', cadastro, name='joinUs')
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
