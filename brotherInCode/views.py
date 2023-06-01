@@ -67,7 +67,7 @@ def perfil_usuario(request):
 
 def tutorias(request):
     res = []
-    tutorias = Tutoria.objects.filter(id_aluno=request.user.id) + Tutoria.objects.filter(id_tutor=request.user.id)
+    tutorias = Tutoria.objects.filter(id_aluno=request.user.id) #+ Tutoria.objects.filter(id_tutor=request.user.id)
     for tutoria in tutorias:
         res.append({
             'id_tutoria': tutoria.id_tutoria,
@@ -78,7 +78,7 @@ def tutorias(request):
             'link': tutoria.link,
         })
     
-    return render(request, 'brotherInCode/tutorias.html', res)
+    return render(request, 'brotherInCode/tutorias.html', {'tutorias': res})
 
 def quem_somos(request):
     return render(request, 'brotherInCode/quem somos.html')

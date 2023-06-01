@@ -1,113 +1,118 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>> Brother-InCode</title>
-	<link rel="stylesheet" type="text/css" href="estilos.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>> Brother-InCode</title>
+  <link rel="stylesheet" type="text/css" href="estilos.css">
 </head>
+
 <body>
-	<div id="container">
-		<div>
-			<div class="logo">
-				> Brother-InCode
-			</div>
-			<div id="Login">
-				<a href="login.html">Login</a>
-			</div>
-			<div id="topo-menu">
-				<ul style="list-style: none; margin: 0; padding: 0;">
-					<li><a href="main2.html"><img src="img/image 4.png" class="icone"> Orientações</a></li>
-					<li><a href="quem somos.html"><img src="img/image 2.png" class="icone"> Quem somos</a></li>
-					<li><a href="tutorias.html" class="selected"><img src="img/image 3.png" class="icone"> Tutorias</a></li>
-					<li><a href="perfil.html" ><img src="img/image 5.png" class="icone"> Perfil</a></li> 
-				</ul>
-			</div>
-		</div>		
-	</div>
-	<div id="corpo">
-		<div id="img-container">
-		</div>
-		<div id="texto-corpo">
+  <div id="container">
+    <div>
+      <div class="logo">
+        > Brother-InCode
+      </div>
+      <div id="Login">
+        <a href="login.html">Login</a>
+      </div>
+      <div id="topo-menu">
+        <ul style="list-style: none; margin: 0; padding: 0;">
+          <li><a href="{% url 'lista_tutores' %}"><img src="img/image 1.png" class="icone"> Orientações</a>
+          </li>
+          <li><a href="{% url 'quem-somos' %}"><img src="img/image 2.png" class="icone"> Quem somos</a></li>
+          <li><a href=""><img src="img/image 3.png" class="icone"> Tutorias</a></li>
+          <li><a href="{% url 'perfil_usuario' %}" class="selected"><img src="img/image 5.png" class="icone"> Perfil</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div id="corpo">
+    <div id="img-container">
+    </div>
+    <div id="texto-corpo">
       <h1><span class="marked">Minhas Tutorias</span></h1>
-        <div class="card">
-            <div class="row">
-                <div class="card">
-                  <span class="tutorias">
-                    <div id="foto_card">
-                      <a href="#">
-                          <ion-icon name="person"></ion-icon>
-                      </a>
-                    </div>
-                    <h1>Joaquim Maria</h1>
-                  </span>
-
-                  <span class="tutorias">
-                    <h2>Horários</h2>
-                      <ul>
-                        <li>Lorem ipsum dolor;</li>
-                        <li>Lorem beatae quam quo dolore.</li>
-                      </ul>
-                  </span>
-
-                  <span class="tutorias">
-                    <h2>Tópicos ensinados</h2>
-                      <ul>
-                        <li>Lorem ipsum dolor;</li>
-                        <li>Lorem beatae quam quo dolore.</li>
-                      </ul>
-                  </span>
-
-                  <span class="tutorias">
-                    <h2>Link de Reunião</h2>
-                      <div id="foto_card">
-                        <a href="#">
-                          <ion-icon name="chatbubbles-outline"></ion-icon>
-                        </a>
-                      </div>
-                  </span>
-                </div>
-
-                <div class="card">
-                  <span class="tutorias">
-                    <div id="foto_card">
-                      <a href="#">
-                          <ion-icon name="person"></ion-icon>
-                      </a>
-                    </div>
-                    <h1>Ranilson Paiva</h1>
-                  </span>
-
-                  <span class="tutorias">
-                    <h2>Horários</h2>
-                      <ul>
-                        <li>Lorem ipsum dolor;</li>
-                        <li>Lorem beatae quam quo dolore.</li>
-                      </ul>
-                  </span>
-
-                  <span class="tutorias">
-                    <h2>Tópicos ensinados</h2>
-                      <ul>
-                        <li>Lorem ipsum dolor;</li>
-                        <li>Lorem beatae quam quo dolore.</li>
-                      </ul>
-                  </span>
-
-                  <span class="tutorias">
-                    <h2>Link de Reunião</h2>
-                      <div id="foto_card">
-                        <a href="#">
-                          <ion-icon name="chatbubbles-outline"></ion-icon>
-                        </a>
-                      </div>
-                  </span>
-                </div>
-                
+      <div class="card">
+        <div class="row">
+          <div class="card">
+            <span class="tutorias">
+              <div id="foto_card">
+                <a href="#">
+                  <ion-icon name="person"></ion-icon>
+                </a>
               </div>
+              <h1>Joaquim Maria</h1>
+            </span>
+
+            <span class="tutorias">
+              <h2>Horários</h2>
+              <ul>
+                <li>Lorem ipsum dolor;</li>
+                <li>Lorem beatae quam quo dolore.</li>
+              </ul>
+            </span>
+
+            <span class="tutorias">
+              <h2>Tópicos ensinados</h2>
+              <ul>
+                <li>Lorem ipsum dolor;</li>
+                <li>Lorem beatae quam quo dolore.</li>
+              </ul>
+            </span>
+
+            <span class="tutorias">
+              <h2>Link de Reunião</h2>
+              <div id="foto_card">
+                <a href="#">
+                  <ion-icon name="chatbubbles-outline"></ion-icon>
+                </a>
+              </div>
+            </span>
+          </div>
+
+          <div class="card">
+            <span class="tutorias">
+              <div id="foto_card">
+                <a href="#">
+                  <ion-icon name="person"></ion-icon>
+                </a>
+              </div>
+              <h1>Ranilson Paiva</h1>
+            </span>
+
+            <span class="tutorias">
+              <h2>Horários</h2>
+              <ul>
+                <li>Lorem ipsum dolor;</li>
+                <li>Lorem beatae quam quo dolore.</li>
+              </ul>
+            </span>
+
+            <span class="tutorias">
+              <h2>Tópicos ensinados</h2>
+              <ul>
+                <li>Lorem ipsum dolor;</li>
+                <li>Lorem beatae quam quo dolore.</li>
+              </ul>
+            </span>
+
+            <span class="tutorias">
+              <h2>Link de Reunião</h2>
+              <div id="foto_card">
+                <a href="#">
+                  <ion-icon name="chatbubbles-outline"></ion-icon>
+                </a>
+              </div>
+            </span>
+          </div>
+
         </div>
-		</div>
-        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+      </div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
+
 </html>
