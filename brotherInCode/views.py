@@ -82,3 +82,9 @@ def tutorias(request):
 
 def quem_somos(request):
     return render(request, 'brotherInCode/quem somos.html')
+
+def login(request):
+    return render(request, 'brotherInCode/login.html')
+
+def cadastro(request):
+    return render(request, 'brotherInCode/joinUs.html')

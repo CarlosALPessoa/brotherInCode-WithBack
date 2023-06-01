@@ -27,9 +27,11 @@ urlpatterns = [
     path('tutores/', views.lista_tutores, name='lista_tutores'),
     path('quem-somos/', views.quem_somos, name='quem-somos'),
     path('tutor/<int:id_tutor>/', views.perfil_tutor, name='detalhe_tutor'),
-
-    path('api-auth/', include('rest_framework.urls')),
-    path('tutores/<int:id_tutor>/', perfil_tutor, name='detalhe_tutor'),
-    path('perfil/', views.perfil_usuario, name='perfil_usuario'),
     path('tutorias/', tutorias, name='tutorias'),
+    path('perfil/', views.perfil_usuario, name='perfil_usuario'),
+    path('login/', views.login, name='login'),
+    path('cadastro/', views.cadastro, name='cadastro'),
+
+    #path('api-auth/', include('rest_framework.urls')),
+    #path('tutores/<int:id_tutor>/', perfil_tutor, name='detalhe_tutor'),
 ]
