@@ -15,7 +15,7 @@
 				> Brother-InCode
 			</div>
 			<div id="Login">
-				<a href="">JoaoJose</a>
+				<a href="">{{ usuario.username }}</a>
 			</div>
 			<div id="topo-menu">
 				<ul style="list-style: none; margin: 0; padding: 0;">
@@ -33,18 +33,20 @@
 			<div id="texto-perfil">
 				<form>
 					<label for="username">Usuário:</label><br>
-					<input type="text" id="username" name="username" placeholder="JM-de-IA"
+					<input type="text" id="username" name="username" placeholder="{{ usuario.username }}"
 						onclick="clearInput(this)"><br>
 					<label for="nome">Nome:</label><br>
-					<input type="text" id="nome" name="nome" placeholder="Joaquim Maria" onclick="clearInput(this)"><br>
-					<label for="lname">Sobrenome:</label><br>
-					<input type="text" id="sobrenome" name="sobrenome" placeholder="Silva Santos"
+					<input type="text" id="nome" name="nome" placeholder="{{ usuario.nome }}"
 						onclick="clearInput(this)"><br>
 					<label for="email">E-mail:</label><br>
-					<input type="text" id="email" name="email" placeholder="BIC@ic.ufal.br"
+					<input type="text" id="email" name="email" placeholder="{{ usuario.email }}"
 						onclick="clearInput(this)"><br>
-					<label for="disciplinas">Disciplinas de interesse:</label><br>
-					<input type="text" id="disciplinas" class="disciplinas" name="disciplinas"><br>
+					<label for="disciplinas">Sobre:</label><br>
+					<input type="text" id="disciplinas" class="disciplinas" name="sobre"
+						placeholder="{{ usuario.sobre }}"><br>
+					<label for="disciplinas">Especializações:</label><br>
+					<input type="text" id="disciplinas" class="disciplinas" name="especializacoes"
+						placeholder="{{ usuario.especializacoes }}"><br>
 					<button type="button" class="salvar" onclick="alert('As alterações foram salvas!')">Salvar
 						alterações</button>
 					<button type="button" class="cancelar" onclick="alert('Alterações descartadas!')">Cancelar</button>

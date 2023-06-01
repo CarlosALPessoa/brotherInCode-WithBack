@@ -62,7 +62,7 @@ def perfil_usuario(request):
         res['sobre'] = usuario.sobre
         res['especializacoes'] = EspecializacaoTutorSerializer(especializacoes, many=True).data
     
-    return render(request, 'brotherInCode/perfil.html', res)
+    return render(request, 'brotherInCode/perfil.html', {'usuario': res})
 
 
 def tutorias(request):
