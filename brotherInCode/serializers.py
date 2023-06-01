@@ -37,6 +37,7 @@ class EspecializacaoTutorSerializer(serializers.ModelSerializer):
             'id_especializacao': obj.id_especializacao_tutor,
             'id_tutor': obj.id_tutor.pk,
             'area_do_conhecimento': obj.id_sub_area_conhecimento.nome,
+            'descricao': obj.descricao,
         }
     
 

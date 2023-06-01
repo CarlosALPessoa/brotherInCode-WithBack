@@ -48,7 +48,7 @@
                         <!--Mostragem de suas competências-->
                         <h2 style=" float: right; margin-top: 22px; margin-left: -210px;">Capacitações:</h2>
                         <ul style="float: right; margin-top: 25px; margin-right: -42%;">
-                            {% for especializacao in especializacoes %}
+                            {% for especializacao in tutor.especializacoes %}
                             <li>{{ especializacao.descricao }}</li>
                             {% endfor %}
                         </ul>
