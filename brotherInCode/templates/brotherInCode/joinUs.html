@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,11 +10,11 @@
 			element.placeholder = "";
 		}
 	</script>
-	<link rel="stylesheet" type="text/css" href="estilos.css">
+	<link rel="stylesheet" type="text/css" href="{% static "../static/css/estilos.css" %}">
 </head>
 <body>
 	<div class="logo" style="text-align: center; margin-left: 27%;">
-		<a href="main2.html"> Brother-InCode</a>
+		<a href="{% url 'main2' %}"> Brother-InCode</a>
 	</div>
 	<div id="LoginTela">
 		<div class="logo" style="padding: 15px 50px;">
@@ -35,14 +36,14 @@
             <input type="radio" name="tutor" id="">Aluno
         </div>
 		<div id="entrarLogin" style="margin-top: 2%;">
-			<a href="login.html">
+			<a href="{% url 'login' %}">
 				Registrar
 			</a>
 		</div>
 		<div id="divisor"></div>
 		<div id="preregister" style="color: black; margin-top: 2%;">
 			Já é cadastrado?
-			<a href="login.html">Logue Aqui</a>
+			<a href="{% url 'login' %}">Logue Aqui</a>
 		</div>
 	</div>
 </body>

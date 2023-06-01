@@ -29,7 +29,6 @@ class Tutores(models.Model):
     nome = models.CharField(max_length=255)
     email = models.EmailField()
     telefone = models.CharField(max_length=11)
-    sobre = models.TextField(blank=True, null=True)
     
     class Meta:
         verbose_name_plural = 'Tutores'

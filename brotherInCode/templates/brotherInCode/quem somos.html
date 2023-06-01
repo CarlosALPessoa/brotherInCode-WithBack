@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>> Brother-InCode</title>
-	<link rel="stylesheet" type="text/css" href="estilos.css">
+	<link rel="stylesheet" type="text/css" href="{% static "../static/css/estilos.css" %}">
 </head>
 <body>
 	<div id="container">
@@ -17,20 +18,17 @@
 			</div>
 			<div id="topo-menu">
 				<ul style="list-style: none; margin: 0; padding: 0;">
-					<li><a href="main2.html" ><img src="img/image 4.png" class="icone"> Orientações</a></li>
-					<li><a href="quem somos.html" class="selected"><img src="img/image 2.png" class="icone"> Quem somos</a></li>
-					<li><a href="tutorias.html"><img src="img/image 3.png" class="icone"> Tutorias</a></li>
-					
-                    <li><a href="perfil.html" ><img src="img/image 5.png" class="icone"> Perfil</a></li> 
-                    <!--<li><a href="#"><img src="img/image 6.png" class="icone"> Mensagens</a></li> 
-					FUTURA IMPLEMENTAÇÃO
-					-->	
+					<li><a href="{% url 'main2' %}"><img src="{% static "../static/img/image 4.png" %}" class="icone"> Orientações</a></li>
+					<li><a href="{% url 'quem somos' %}" class="selected"><img src="{% static "../static/img/image 2.png" %}" class="icone"> Quem somos</a></li>
+					<li><a href="{% url 'tutorias' %}" ><img src="{% static "../static/img/image 3.png" %}" class="icone"> Tutorias</a></li>				
+					<li><a href="{% url 'perfil' %}" ><img src="{% static "../static/img/image 5.png" %}" class="icone"> Perfil</a></li>  
+                    <!--<li><a href="#"><img src="img/image 6.png" class="icone"> Mensagens</a></li>-->
 			</div>
 		</div>		
 	</div>
 	<div id="corpo">
 		<div id="img-container">
-			<img src="img/inicio.png" class="fundo">
+			<img src={% static "../static/img/inicio.png" %} class="fundo">
 			<figcaption><span class="titulo">> Brother-InCode</span>
 			<span class="texto">/* desenvolva suas habilidades de programação e outras áreas com o Brother-InCode - seu parceiro em tecnologia! */</span></figcaption>
 		</div>
@@ -53,7 +51,7 @@
 			<p style="margin: 10px;">O <span class="marked">Brother-InCode</span> é uma ferramenta valiosa para estudantes que desejam aprender mais sobre tecnologia e programação, bem como para aqueles que desejam seguir uma carreira nessa área. Com o acesso a tutores experientes e recursos educacionais de qualidade, os estudantes têm a oportunidade de se tornarem especialistas em tecnologia e, eventualmente, contribuir para a inovação e o avanço tecnológico em todo o mundo.</p>
 			</span>
 			<div id="button">
-				<a href="quem_somos.html">Saiba mais</a>
+				<a href="{% url 'main2' %}">Explore!</a>
 			</div>
 		</div>
 		<div id="texto-corpo-dif">
@@ -70,7 +68,7 @@
 				<p>Estamos ansiosos para tê-lo(a) em nossa plataforma e esperamos que você considere essa oportunidade de compartilhar seu conhecimento com aqueles que mais precisam.</p>
 				
 				<div id="button">
-					<a href="login.html">Junte-se a nós</a>
+					<a href="{% url 'login' %}">Junte-se a nós</a>
 				</div>
 			
 			</span>
