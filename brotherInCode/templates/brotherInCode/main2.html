@@ -16,15 +16,15 @@
                 > Brother-InCode
             </div>
             <div id="Login">
-                <a href="login.html">Login</a>
+                <a href="login">Login</a>
             </div>
             <div id="topo-menu">
                 <ul style="list-style: none; margin: 0; padding: 0;">
-                    <li><a href="main2.html" class="selected"><img src="img/image 4.png" class="icone"> Orientações</a>
+                    <li><a href="" class="selected"><img src="img/image 4.png" class="icone"> Orientações</a>
                     </li>
-                    <li><a href="quem somos.html"><img src="img/image 2.png" class="icone"> Quem somos</a></li>
-                    <li><a href="tutorias.html"><img src="img/image 3.png" class="icone"> Tutorias</a></li>
-                    <li><a href="perfil.html"><img src="img/image 5.png" class="icone"> Perfil</a></li>
+                    <li><a href="{% url 'quem-somos' %}"><img src="img/image 2.png" class="icone"> Quem somos</a></li>
+                    <li><a href="tutorias"><img src="img/image 3.png" class="icone"> Tutorias</a></li>
+                    <li><a href="perfil"><img src="img/image 5.png" class="icone"> Perfil</a></li>
                 </ul>
             </div>
         </div>
@@ -38,7 +38,7 @@
             {% for tutor in tutores %}
             <ul>
                 <li style="list-style: none; display: inline-block;">
-                    <a href="main.html">
+                    <a href="{% url 'detalhe_tutor' id_tutor=tutor.id_tutor %}">
                         <h2 style="position:static; margin-left: 90px; margin-top: 20px; float: left;">
                             <ion-icon name="person"
                                 style="position: static;margin-left: 20px; margin-right: 20px;"></ion-icon>
@@ -56,9 +56,9 @@
                         <!--Mostragem de avaliação com base nos usuários-->
                         <div style="float: left; margin-left: -20%; padding: -25px; margin-top: 60px;">
                             {% for estrela in tutor.estrelas %}
-                                <span class="botao_icon">
-                                    <ion-icon name="star"></ion-icon>
-                                </span>
+                            <span class="botao_icon">
+                                <ion-icon name="star"></ion-icon>
+                            </span>
                             {% endfor %}
                         </div>
                     </a>

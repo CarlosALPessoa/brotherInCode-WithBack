@@ -1,89 +1,70 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>> Brother-InCode</title>
-	<link rel="stylesheet" type="text/css" href="estilos.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>> Brother-InCode</title>
+    <link rel="stylesheet" type="text/css" href="estilos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
 
 </head>
+
 <body>
-	<div id="container">
-		<div>
-			<div class="logo">
-				> Brother-InCode
-			</div>
-			<div id="Login">
-				<a href="login.html">Login</a>
-			</div>
-			<div id="topo-menu">
-				<ul style="list-style: none; margin: 0; padding: 0;">
-					<li><a href="main2.html" class="selected"><img src="img/image 4.png" class="icone"> Orientações</a></li>
-					<li><a href="quem somos.html"><img src="img/image 2.png" class="icone"> Quem somos</a></li>
-					<li><a href="tutorias.html"><img src="img/image 3.png" class="icone"> Tutorias</a></li>				
-					<li><a href="perfil.html" ><img src="img/image 5.png" class="icone"> Perfil</a></li> 
-				</ul>
-			</div>
-		</div>		
-	</div>
-	<div id="corpo">
-		<div id="img-container">
-		</div>
-		<div id="texto-corpo">
-			</span>
+    <div id="container">
+        <div>
+            <div class="logo">
+                > Brother-InCode
+            </div>
+            <div id="Login">
+                <a href="login.html">Login</a>
+            </div>
+            <div id="topo-menu">
+                <ul style="list-style: none; margin: 0; padding: 0;">
+                    <li><a href="{% url 'lista_tutores' %}" class="selected"><img src="img/image 4.png" class="icone">
+                            Orientações</a></li>
+                    <li><a href="{% url 'quem-somos' %}"><img src="img/image 2.png" class="icone"> Quem somos</a></li>
+                    <li><a href="tutorias"><img src="img/image 3.png" class="icone"> Tutorias</a></li>
+                    <li><a href="perfil"><img src="img/image 5.png" class="icone"> Perfil</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="corpo">
+        <div id="img-container">
+        </div>
+        <div id="texto-corpo">
+            </span>
             <br><br><br><br>
             <div id="foto_perfil">
                 <a href="#">
                     <span class="botao_icon">
                         <ion-icon name="person"></ion-icon>
-    
-                    </span> 
+
+                    </span>
                 </a>
             </div>
             <br>
             <div id="tutor">
-                <h1>Joaquim Maria</h1>
+                <h1>{{ tutor.nome }}</h1>
             </div>
             <div id="sobre">
                 <h2>Sobre:</h2>
-                <p style="text-align: justify;">Um graduando no instituto que visa alcançar sucessos no campo de IA.<br> Ingressado
-					numa das melhores empresas voltadas em IA, disposto a passar meus conhecimentos para outros
-					que tem interesse em iniciar na área.</p>
-            <div id="estrela">
-                <a href="#">
+                <p style="text-align: justify;">{{ tutor.sobre }}</p>
+                <div id="estrela">
+                    {% for estrela in tutor.estrelas %}
                     <span class="botao_icon">
                         <ion-icon name="star"></ion-icon>
                     </span>
-                </a>
-                <a href="#">
-                    <span class="botao_icon">
-                        <ion-icon name="star"></ion-icon>
-                    </span>
-                </a>
-                <a href="#">
-                    <span class="botao_icon">
-                        <ion-icon name="star"></ion-icon>
-                    </span>
-                </a>
-                <a href="#">
-                    <span class="botao_icon">
-                        <ion-icon name="star"></ion-icon>
-                    </span>
-                </a>
-                <a href="#">
-                    <span class="botao_icon">
-                        <ion-icon name="star"></ion-icon>
-                    </span>
-                </a>
-            </div>
+                    {% endfor %}
+                </div>
                 <h2>Capacitações:</h2>
-            <div id="capa">        
-                <ul>
-					<li>IA voltada a apredizagem de máquina;</li>
-					<li>Sistema ChatGPT.</li>
-				</ul>
-            </div>
+                <div id="capa">
+                    <ul>
+                        <li>IA voltada a apredizagem de máquina;</li>
+                        <li>Sistema ChatGPT.</li>
+                    </ul>
+                </div>
             </div>
             <br><br><br><br><br><br><br><br><br><br><br><br><br>
             <div id="areas" style="margin-left: 10px;">
@@ -93,20 +74,20 @@
                     <li>Lorem beatae quam quo dolore.</li>
                 </ul>
             </div>
-			<div id="botao">
-				<a href="#">
+            <div id="botao">
+                <a href="#">
                     <span class="botao_icon" style="left: 10%;">
                         <ion-icon name="chatbubbles-outline"></ion-icon>
                     </span>
                 </a>
-			</div>
+            </div>
             <div id="calendar"></div>
 
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
             <script>
-                $(document).ready(function() {
+                $(document).ready(function () {
                     $('#calendar').fullCalendar({
                         // Configurações do calendário
                         header: {
@@ -115,7 +96,7 @@
                             right: 'month,agendaWeek,agendaDay'
                         },
                         selectable: true, // Permite selecionar um período de tempo no calendário
-                        select: function(start, end) {
+                        select: function (start, end) {
                             // Função chamada quando um período é selecionado
                             // Você pode implementar o código para tratar o agendamento aqui
                             var title = prompt('Digite o título do agendamento:');
@@ -138,9 +119,10 @@
                     });
                 });
             </script>
-		</div>
+        </div>
 
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
+
 </html>

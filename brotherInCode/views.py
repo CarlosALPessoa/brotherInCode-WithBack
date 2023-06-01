@@ -31,11 +31,11 @@ def perfil_tutor(request, id_tutor):
         'nome': tutor.nome,
         'sobre': tutor.sobre,
         'especializacoes': EspecializacaoTutorSerializer(especializacoes, many=True).data,
-        'estrelas': sum([avaliacao.nota for avaliacao in avaliacoes])/len(avaliacoes) if len(avaliacoes) > 0 else 0,
+        'estrelas': [0]*int(sum([avaliacao.nota for avaliacao in avaliacoes])/len(avaliacoes)) if len(avaliacoes) > 0 else [0],
         'horarios': HorariosTutorSerializer(horarios, many=True).data,
     }
     
-    return render(request, 'main.html', res)
+    return render(request, 'brotherInCode/main.html', {'tutor': res})
 
 
 def perfil_usuario(request):
@@ -62,7 +62,7 @@ def perfil_usuario(request):
         res['sobre'] = usuario.sobre
         res['especializacoes'] = EspecializacaoTutorSerializer(especializacoes, many=True).data
     
-    return render(request, 'perfil.html', res)
+    return render(request, 'brotherInCode/perfil.html', res)
 
 
 def tutorias(request):
@@ -78,4 +78,7 @@ def tutorias(request):
             'link': tutoria.link,
         })
     
-    return render(request, 'tutorias.html', res)
+    return render(request, 'brotherInCode/tutorias.html', res)
+
+def quem_somos(request):
+    return render(request, 'brotherInCode/quem somos.html')
