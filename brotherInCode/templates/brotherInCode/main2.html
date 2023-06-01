@@ -1,367 +1,87 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>> Brother-InCode</title>
-	<link rel="stylesheet" type="text/css" href="estilos.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>> Brother-InCode</title>
+    <link rel="stylesheet" type="text/css" href="estilos.css">
 </head>
+
 <body>
     <!--Cabeçalho-->
-	<div id="container">
-		<div>
-			<div class="logo">
-				> Brother-InCode
-			</div>
-			<div id="Login">
-				<a href="login.html">Login</a>
-			</div>
-			<div id="topo-menu">
-				<ul style="list-style: none; margin: 0; padding: 0;">
-					<li><a href="main2.html" class="selected"><img src="img/image 4.png" class="icone"> Orientações</a></li>
-					<li><a href="quem somos.html"><img src="img/image 2.png" class="icone"> Quem somos</a></li>
-					<li><a href="tutorias.html"><img src="img/image 3.png" class="icone"> Tutorias</a></li>				
-					<li><a href="perfil.html" ><img src="img/image 5.png" class="icone"> Perfil</a></li> 
-				</ul>
-			</div>
-		</div>		
-	</div>
-	<div id="corpo">
-		<div id="img-container">
-	</div>
-    
-    <div id="texto-corpo2" >
-        <!--Corpo link para clique tutoria-->
-            <ul>
-                <li style="list-style: none; display: inline-block;">
-                    <a href="main.html">
-                            <h2 style="position:static; margin-left: 90px; margin-top: 20px; float: left;">
-                            <ion-icon name="person" style="position: static;margin-left: 20px; margin-right: 20px;"></ion-icon>
-                            Joaquim Maria</h2>
+    <div id="container">
+        <div>
+            <div class="logo">
+                > Brother-InCode
+            </div>
+            <div id="Login">
+                <a href="login.html">Login</a>
+            </div>
+            <div id="topo-menu">
+                <ul style="list-style: none; margin: 0; padding: 0;">
+                    <li><a href="main2.html" class="selected"><img src="img/image 4.png" class="icone"> Orientações</a>
+                    </li>
+                    <li><a href="quem somos.html"><img src="img/image 2.png" class="icone"> Quem somos</a></li>
+                    <li><a href="tutorias.html"><img src="img/image 3.png" class="icone"> Tutorias</a></li>
+                    <li><a href="perfil.html"><img src="img/image 5.png" class="icone"> Perfil</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="corpo">
+        <div id="img-container">
+        </div>
 
-                            <!--Mostragem de suas competências-->
-                            <h2 style=" float: right; margin-top: 22px; margin-left: -210px;">Capacitações:</h2>                                    
-                            <ul style="float: right; margin-top: 25px; margin-right: -42%;">
-                                <li>IA voltada a apredizagem de máquina;</li>
-                                <li>Sistema ChatGPT.</li>
-                            </ul>
-    
-                            <!--Mostragem de avaliação com base nos usuários-->
-                            <div style="float: left; margin-left: -20%; padding: -25px; margin-top: 60px;">
-                                <span class="botao_icon">
-                                    <ion-icon name="star"></ion-icon>
-                                </span>
-                                <span class="botao_icon">
-                                    <ion-icon name="star"></ion-icon>
-                                </span>
-                                <span class="botao_icon">
-                                    <ion-icon name="star"></ion-icon>
-                                </span>
-                                <span class="botao_icon">
-                                    <ion-icon name="star"></ion-icon>
-                                </span>
-                                <span class="botao_icon">
-                                    <ion-icon name="star"></ion-icon>
-                                </span>
-                            </div>
-                    </a>
-                </li>
-            </ul>
+        <div id="texto-corpo2">
             <!--Corpo link para clique tutoria-->
+            {% for tutor in tutores %}
             <ul>
                 <li style="list-style: none; display: inline-block;">
                     <a href="main.html">
-                            <h2 style="position:static; margin-left: 90px; margin-top: 20px; float: left;">
-                            <ion-icon name="person" style="position: static;margin-left: 20px; margin-right: 20px;"></ion-icon>
-                            Joaquim Maria</h2>
+                        <h2 style="position:static; margin-left: 90px; margin-top: 20px; float: left;">
+                            <ion-icon name="person"
+                                style="position: static;margin-left: 20px; margin-right: 20px;"></ion-icon>
+                            {{ tutor.nome }}
+                        </h2>
 
-                            <!--Mostragem de suas competências-->
-                            <h2 style=" float: right; margin-top: 22px; margin-left: -210px;">Capacitações:</h2>                                    
-                            <ul style="float: right; margin-top: 25px; margin-right: -42%;">
-                                <li>IA voltada a aprendizagem de máquina;</li>
-                                <li>Sistema ChatGPT.</li>
-                            </ul>
-    
-                            <!--Mostragem de avaliação com base nos usuários-->
-                            <div style="float: left; margin-left: -20%; padding: -25px; margin-top: 60px;">
-                                <span class="botao_icon">
-                                    <ion-icon name="star"></ion-icon>
-                                </span>
-                                <span class="botao_icon">
-                                    <ion-icon name="star"></ion-icon>
-                                </span>
-                                <span class="botao_icon">
-                                    <ion-icon name="star"></ion-icon>
-                                </span>
-                                <span class="botao_icon">
-                                    <ion-icon name="star"></ion-icon>
-                                </span>
-                                <span class="botao_icon">
-                                    <ion-icon name="star"></ion-icon>
-                                </span>
-                            </div>
+                        <!--Mostragem de suas competências-->
+                        <h2 style=" float: right; margin-top: 22px; margin-left: -210px;">Capacitações:</h2>
+                        <ul style="float: right; margin-top: 25px; margin-right: -42%;">
+                            {% for especializacao in especializacoes %}
+                            <li>{{ especializacao.descricao }}</li>
+                            {% endfor %}
+                        </ul>
+
+                        <!--Mostragem de avaliação com base nos usuários-->
+                        <div style="float: left; margin-left: -20%; padding: -25px; margin-top: 60px;">
+                            <span class="botao_icon">
+                                <ion-icon name="star"></ion-icon>
+                            </span>
+                            <span class="botao_icon">
+                                <ion-icon name="star"></ion-icon>
+                            </span>
+                            <span class="botao_icon">
+                                <ion-icon name="star"></ion-icon>
+                            </span>
+                            <span class="botao_icon">
+                                <ion-icon name="star"></ion-icon>
+                            </span>
+                            <span class="botao_icon">
+                                <ion-icon name="star"></ion-icon>
+                            </span>
+                        </div>
                     </a>
                 </li>
             </ul>
+            {% endfor %}
             <!--Corpo link para clique tutoria-->
-            <ul>
-                <li style="list-style: none; display: inline-block;">
-                    <a href="main.html">
-                            <h2 style="position:static; margin-left: 90px; margin-top: 20px; float: left;">
-                            <ion-icon name="person" style="position: static;margin-left: 20px; margin-right: 20px;"></ion-icon>
-                            Joaquim Maria</h2>
 
-                            <!--Mostragem de suas competências-->
-                            <h2 style=" float: right; margin-top: 22px; margin-left: -210px;">Capacitações:</h2>                                    
-                            <ul style="float: right; margin-top: 25px; margin-right: -42%;">
-                                <li>IA voltada a aprendizagem de máquina;</li>
-                                <li>Sistema ChatGPT.</li>
-                            </ul>
-    
-                            <!--Mostragem de avaliação com base nos usuários-->
-                            <div style="float: left; margin-left: -20%; padding: -25px; margin-top: 60px;">
-                                <span class="botao_icon">
-                                    <ion-icon name="star"></ion-icon>
-                                </span>
-                                <span class="botao_icon">
-                                    <ion-icon name="star"></ion-icon>
-                                </span>
-                                <span class="botao_icon">
-                                    <ion-icon name="star"></ion-icon>
-                                </span>
-                                <span class="botao_icon">
-                                    <ion-icon name="star"></ion-icon>
-                                </span>
-                                <span class="botao_icon">
-                                    <ion-icon name="star"></ion-icon>
-                                </span>
-                            </div>
-                    </a>
-                </li>
-            </ul>
-            <!--Corpo link para clique tutoria-->
-            <ul>
-                <li style="list-style: none; display: inline-block;">
-                    <a href="main.html">
-                            <h2 style="position:static; margin-left: 90px; margin-top: 20px; float: left;">
-                            <ion-icon name="person" style="position: static;margin-left: 20px; margin-right: 20px;"></ion-icon>
-                            Joaquim Maria</h2>
 
-                            <!--Mostragem de suas competências-->
-                            <h2 style=" float: right; margin-top: 22px; margin-left: -210px;">Capacitações:</h2>                                    
-                            <ul style="float: right; margin-top: 25px; margin-right: -42%;">
-                                <li>IA voltada a aprendizagem de máquina;</li>
-                                <li>Sistema ChatGPT.</li>
-                            </ul>
-    
-                            <!--Mostragem de avaliação com base nos usuários-->
-                            <div style="float: left; margin-left: -20%; padding: -25px; margin-top: 60px;">
-                                <span class="botao_icon">
-                                    <ion-icon name="star"></ion-icon>
-                                </span>
-                                <span class="botao_icon">
-                                    <ion-icon name="star"></ion-icon>
-                                </span>
-                                <span class="botao_icon">
-                                    <ion-icon name="star"></ion-icon>
-                                </span>
-                                <span class="botao_icon">
-                                    <ion-icon name="star"></ion-icon>
-                                </span>
-                                <span class="botao_icon">
-                                    <ion-icon name="star"></ion-icon>
-                                </span>
-                            </div>
-                    </a>
-                </li>
-            </ul>
-            <!--Corpo link para clique tutoria-->
-            <ul>
-                <li style="list-style: none; display: inline-block;">
-                    <a href="main.html">
-                            <h2 style="position:static; margin-left: 90px; margin-top: 20px; float: left;">
-                            <ion-icon name="person" style="position: static;margin-left: 20px; margin-right: 20px;"></ion-icon>
-                            Joaquim Maria</h2>
+            <!--FIM CORPO LINK-->
 
-                            <!--Mostragem de suas competências-->
-                            <h2 style=" float: right; margin-top: 22px; margin-left: -210px;">Capacitações:</h2>                                    
-                            <ul style="float: right; margin-top: 25px; margin-right: -42%;">
-                                <li>IA voltada a aprendizagem de máquina;</li>
-                                <li>Sistema ChatGPT.</li>
-                            </ul>
-    
-                            <!--Mostragem de avaliação com base nos usuários-->
-                            <div style="float: left; margin-left: -20%; padding: -25px; margin-top: 60px;">
-                                <span class="botao_icon">
-                                    <ion-icon name="star"></ion-icon>
-                                </span>
-                                <span class="botao_icon">
-                                    <ion-icon name="star"></ion-icon>
-                                </span>
-                                <span class="botao_icon">
-                                    <ion-icon name="star"></ion-icon>
-                                </span>
-                                <span class="botao_icon">
-                                    <ion-icon name="star"></ion-icon>
-                                </span>
-                                <span class="botao_icon">
-                                    <ion-icon name="star"></ion-icon>
-                                </span>
-                            </div>
-                    </a>
-                </li>
-            </ul>
-            <!--Corpo link para clique tutoria-->
-            <ul>
-                <li style="list-style: none; display: inline-block;">
-                    <a href="main.html">
-                            <h2 style="position:static; margin-left: 90px; margin-top: 20px; float: left;">
-                            <ion-icon name="person" style="position: static;margin-left: 20px; margin-right: 20px;"></ion-icon>
-                            Joaquim Maria</h2>
-
-                            <!--Mostragem de suas competências-->
-                            <h2 style=" float: right; margin-top: 22px; margin-left: -210px;">Capacitações:</h2>                                    
-                            <ul style="float: right; margin-top: 25px; margin-right: -42%;">
-                                <li>IA voltada a aprendizagem de máquina;</li>
-                                <li>Sistema ChatGPT.</li>
-                            </ul>
-    
-                            <!--Mostragem de avaliação com base nos usuários-->
-                            <div style="float: left; margin-left: -20%; padding: -25px; margin-top: 60px;">
-                                <span class="botao_icon">
-                                    <ion-icon name="star"></ion-icon>
-                                </span>
-                                <span class="botao_icon">
-                                    <ion-icon name="star"></ion-icon>
-                                </span>
-                                <span class="botao_icon">
-                                    <ion-icon name="star"></ion-icon>
-                                </span>
-                                <span class="botao_icon">
-                                    <ion-icon name="star"></ion-icon>
-                                </span>
-                                <span class="botao_icon">
-                                    <ion-icon name="star"></ion-icon>
-                                </span>
-                            </div>
-                    </a>
-                </li>
-            </ul>
-            <!--Corpo link para clique tutoria-->
-            <ul>
-                <li style="list-style: none; display: inline-block;">
-                    <a href="main.html">
-                            <h2 style="position:static; margin-left: 90px; margin-top: 20px; float: left;">
-                            <ion-icon name="person" style="position: static;margin-left: 20px; margin-right: 20px;"></ion-icon>
-                            Joaquim Maria</h2>
-                             
-
-                            <!--Mostragem de suas competências-->
-                            <h2 style=" float: right; margin-top: 22px; margin-left: -210px;">Capacitações:</h2>                                    
-                            <ul style="float: right; margin-top: 25px; margin-right: -42%;">
-                                <li>IA voltada a aprendizagem de máquina;</li>
-                                <li>Sistema ChatGPT.</li>
-                            </ul>
-    
-                            <!--Mostragem de avaliação com base nos usuários-->
-                            <div style="float: left; margin-left: -20%; padding: -25px; margin-top: 60px;">
-                                <span class="botao_icon">
-                                    <ion-icon name="star"></ion-icon>
-                                </span>
-                                <span class="botao_icon">
-                                    <ion-icon name="star"></ion-icon>
-                                </span>
-                                <span class="botao_icon">
-                                    <ion-icon name="star"></ion-icon>
-                                </span>
-                                <span class="botao_icon">
-                                    <ion-icon name="star"></ion-icon>
-                                </span>
-                                <span class="botao_icon">
-                                    <ion-icon name="star"></ion-icon>
-                                </span>
-                            </div>
-                    </a>
-                </li>
-            </ul>
-            <!--Corpo link para clique tutoria-->
-            <ul>
-                <li style="list-style: none; display: inline-block;">
-                    <a href="main.html">
-                            <h2 style="position:static; margin-left: 90px; margin-top: 20px; float: left;">
-                            <ion-icon name="person" style="position: static;margin-left: 20px; margin-right: 20px;"></ion-icon>
-                            Joaquim Maria</h2>
-
-                            <!--Mostragem de suas competências-->
-                            <h2 style=" float: right; margin-top: 22px; margin-left: -210px;">Capacitações:</h2>                                    
-                            <ul style="float: right; margin-top: 25px; margin-right: -42%;">
-                                <li>IA voltada a aprendizagem de máquina;</li>
-                                <li>Sistema ChatGPT.</li>
-                            </ul>
-    
-                            <!--Mostragem de avaliação com base nos usuários-->
-                            <div style="float: left; margin-left: -20%; padding: -25px; margin-top: 60px;">
-                                <span class="botao_icon">
-                                    <ion-icon name="star"></ion-icon>
-                                </span>
-                                <span class="botao_icon">
-                                    <ion-icon name="star"></ion-icon>
-                                </span>
-                                <span class="botao_icon">
-                                    <ion-icon name="star"></ion-icon>
-                                </span>
-                                <span class="botao_icon">
-                                    <ion-icon name="star"></ion-icon>
-                                </span>
-                                <span class="botao_icon">
-                                    <ion-icon name="star"></ion-icon>
-                                </span>
-                            </div>
-                    </a>
-                </li>
-            </ul>
-            <!--Corpo link para clique tutoria-->
-            <ul>
-                <li style="list-style: none; display: inline-block;">
-                    <a href="main.html">
-                            <h2 style="position:static; margin-left: 90px; margin-top: 20px; float: left;">
-                            <ion-icon name="person" style="position: static;margin-left: 20px; margin-right: 20px;"></ion-icon>
-                            Joaquim Maria</h2>
-
-                            <!--Mostragem de suas competências-->
-                            <h2 style=" float: right; margin-top: 22px; margin-left: -210px;">Capacitações:</h2>                                    
-                            <ul style="float: right; margin-top: 25px; margin-right: -42%;">
-                                <li>IA voltada a aprendizagem de máquina;</li>
-                                <li>Sistema ChatGPT.</li>
-                            </ul>
-    
-                            <!--Mostragem de avaliação com base nos usuários-->
-                            <div style="float: left; margin-left: -20%; padding: -25px; margin-top: 60px;">
-                                <span class="botao_icon">
-                                    <ion-icon name="star"></ion-icon>
-                                </span>
-                                <span class="botao_icon">
-                                    <ion-icon name="star"></ion-icon>
-                                </span>
-                                <span class="botao_icon">
-                                    <ion-icon name="star"></ion-icon>
-                                </span>
-                                <span class="botao_icon">
-                                    <ion-icon name="star"></ion-icon>
-                                </span>
-                                <span class="botao_icon">
-                                    <ion-icon name="star"></ion-icon>
-                                </span>
-                            </div>
-                    </a>
-                </li>
-            </ul>
-            
-
-        <!--FIM CORPO LINK-->
-        
-        <!--Apresentação bem-vindo-->
-<!--        <div id="sobre2" style="position:fixed;  float: right;">
+            <!--Apresentação bem-vindo-->
+            <!--        <div id="sobre2" style="position:fixed;  float: right;">
 
             
             <h2>SEJA BEM-VINDO</h2>
@@ -370,17 +90,18 @@
        
             		
 		    </div>
--->            
-    </div>
+-->
+        </div>
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     </div>
 
-    <!--Rodapé-->    
+    <!--Rodapé-->
     <div id="container-rodape" style="clear: both;">
         <div id="rodape" style="text-align: center;">
             &copy; Copyright 2023-2023 Brother-InCode
         </div>
-    </div> 
+    </div>
 </body>
+
 </html>

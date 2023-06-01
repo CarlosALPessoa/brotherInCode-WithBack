@@ -19,7 +19,7 @@ def lista_tutores(request):
             'estrelas': sum([avaliacao.nota for avaliacao in avaliacoes])/len(avaliacoes) if len(avaliacoes) > 0 else 0,
         })
     
-    return render(request, 'main2.html', res)
+    return render(request, 'brotherInCode/main2.html', {'tutores': tutores, 'especializacoes': especializacoes})
 
 
 def perfil_tutor(request, id_tutor):
